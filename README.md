@@ -1,6 +1,7 @@
 # recruit-me
 Allows developers and users to list potential coding project ideas to recruit other developers with a specific skill-set  
-Please ensure you have PostgreSQL installed with the following steps:  
+
+Please ensure you have PostgreSQL (or the program will default use DBSQLite) installed with the following steps:  
 
 ```
 pip install psycopg2-binary
