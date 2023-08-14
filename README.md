@@ -34,6 +34,9 @@ py manage.py migrate
 py manage.py runserver
 ```
 
-And load it in your browser: 127.0.0.1:8000/
+And load it in your browser: 127.0.0.1:8000/  
 
+**Signup Page**
+
+<img width="1510" alt="SignUpPage" src="https://github.com/surven02/recruit-me/assets/63677596/565d77d4-1cef-45d1-a69e-d9ac76cf59ff">
 
