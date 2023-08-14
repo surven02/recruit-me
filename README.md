@@ -3,7 +3,7 @@ Allows developers and users to list potential coding project ideas to recruit ot
 Please ensure you have PostgreSQL installed with the following steps:  
 
 ```
-Look! You can see my backticks.
+pip install psycopg2-binary
 ```
 
 Then create an RDS database in your AWS account (or natively use Postgre SQL).  
