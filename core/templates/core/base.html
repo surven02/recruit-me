@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+
+    <body>
+        <nav class="py-5 px-8 flex justify-between items-center border-b border-gray-200">
+            
+            <a href="/" class="px-6 py-3 text-4xl font-semibold rounded-xl unique-title hover:text-black-500">RecruitMe</a>
+            <style>
+                .unique-title:hover {
+                    background-color: #008fb3;
+                }
+                
+            </style>
+            <div class="space-x-6">
+                <a href="{% url 'listing:new' %}" class="px-6 py-3 text-lg font-semibold rounded-xl unique-title hover:bg-teal-700">New Project Listing</a>
+                <a href="{% url 'listing:listings' %}" class="px-6 py-3 text-lg font-semibold rounded-xl unique-title hover:bg-teal-700">Browse</a>
+                {% if request.user.is_authenticated %}
+                    <a href="{% url 'conversation:inbox' %}" class="px-4 py-3 text-lg font-semibold rounded-xl unique-title hover:bg-teal-700">Inbox</a>
+                    <a href="{% url 'dashboard:index' %}" class="px-4 py-3 text-lg font-semibold rounded-xl unique-title hover:bg-teal-700">Dashboard</a>
+                    <a href="{% url 'core:profile' %}" class="px-4 py-3 text-lg font-semibold rounded-xl unique-title hover:bg-teal-700">My Profile</a>
+                    <a href="{% url 'core:logout' %}" class="px-4 py-3 text-lg font-semibold rounded-xl unique-title hover:bg-teal-700">Logout</a>
+                {% else %}
+                    <a href="{% url 'core:signup' %}" class="px-4 py-3 text-lg font-semibold rounded-xl unique-title hover:bg-teal-700">Sign up</a>
+                    <a href="{% url 'core:login' %}" class="px-4 py-3 text-lg font-semibold rounded-xl unique-title hover:bg-teal-700">Log in</a>
+                {% endif %}
+            </div>
+        </nav>
+
+        <div class="px-6 py-6">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+
+        <footer class="py-6 px-6 flex justify-between bg-gray-800" style="background-color: #e6faff;">
+            <div class="w-2/3 pr-10">
+                <h3 class="mb-5 font-semibold text-gray-400 text-2xl">About</h3>
+
+                <p class="text-lg text-gray-500">Built with <strong>Django</strong> and <strong>Python</strong></p>
+                <p class="text-lg text-gray-500">Integrated with <strong>PostgresSQL</strong> on <strong>Amazon AWS RDS</strong></p>
+                <p class="text-lg text-gray-500">Deployed on <strong>AWS Elastic Beanstalk</strong></p>
+                <br>
+                <p class="text-lg text-gray-500">If you like this project, please reach out at [<strong>surven02@gmail.com</strong>]!</p>
+                <p class="text-lg text-gray-500">Or visit my Github at <a href="https://github.com/surven02"><strong>https://github.com/surven02</strong></a></p>
+
+            </div>
+
+            
+        </footer>
+    </body>
+</html>
